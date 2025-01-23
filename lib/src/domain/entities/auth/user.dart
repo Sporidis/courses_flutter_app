@@ -15,4 +15,10 @@ class User extends Equatable {
 
   @override
   List<Object?> get props => [id];
+
+  const User.empty()
+      : id = 0,
+        name = '_empty.string',
+        createdAt = '_empty.string',
+        avatar = '_empty.string';
 }
