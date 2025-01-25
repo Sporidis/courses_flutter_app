@@ -13,8 +13,6 @@ class User extends Equatable {
     required this.avatar,
   });
 
- 
-
   @override
   List<Object?> get props => [id, name, avatar];
 
@@ -23,6 +21,4 @@ class User extends Equatable {
         name = '_empty.string',
         createdAt = '_empty.string',
         avatar = '_empty.string';
-  
-  
 }
