@@ -34,7 +34,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
 
     result.fold(
-      (error) => emit(AuthError('Error ${error.code}: ${error.message}')),
+      (error) => emit(AuthError(error.errorMessage)),
       (_) => emit(const UserCreated()),
     );
   }
@@ -46,7 +46,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await _getUsers();
 
     result.fold(
-      (error) => emit(AuthError('Error ${error.code}: ${error.message}')),
+      (error) => emit(AuthError(error.errorMessage)),
       (users) => emit(UsersLoaded(users)),
     );
   }

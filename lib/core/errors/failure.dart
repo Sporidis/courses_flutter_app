@@ -5,6 +5,8 @@ abstract class Failure extends Equatable {
   final String message;
   final int code;
 
+  String get errorMessage => 'Error $code: $message';
+
   const Failure({required this.message, required this.code});
 
   @override
